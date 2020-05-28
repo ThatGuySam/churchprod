@@ -6,12 +6,10 @@ import styles from '../styles/header.module.css'
 
 const navItems: { label: string; page?: string; link?: string }[] = [
   { label: 'churchprod', page: '/' },
-//   { label: 'Blog', page: '/' },
-//   { label: 'Contact', page: '/contact' },
-//   { label: 'Source Code', link: 'https://github.com/ijjk/notion-blog' },
+  //   { label: 'Blog', page: '/' },
+  //   { label: 'Contact', page: '/contact' },
+  //   { label: 'Source Code', link: 'https://github.com/ijjk/notion-blog' },
 ]
-
-const ogImageUrl = 'https://churchprod.now.sh/og-image.png'
 
 export default ({ titlePre = '' }) => {
   const { pathname } = useRouter()
@@ -20,12 +18,14 @@ export default ({ titlePre = '' }) => {
     <header className={styles.header}>
       <Head>
         <title>{titlePre ? `${titlePre} |` : ''} churchprod</title>
+        <meta name="description" content="A blog about Church Production" />
+        <meta property="og:title" content="churchprod" />
         <meta
-          name="description"
-          content="A blog about Church Production"
+          property="og:image"
+          content="https://churchprod.now.sh/og-image.png"
         />
-        <meta name="og:title" content="churchprod" />
-        <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:image:width" content="2048" />
+        <meta property="og:image:height" content="1170" />
         <meta name="twitter:site" content="@thatguysam" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={ogImageUrl} />
