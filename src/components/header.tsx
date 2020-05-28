@@ -11,6 +11,10 @@ const navItems: { label: string; page?: string; link?: string }[] = [
   //   { label: 'Source Code', link: 'https://github.com/ijjk/notion-blog' },
 ]
 
+const ogImageUrl = 'https://churchprod.now.sh/og-image.png'
+const ogImageWidth = '2048'
+const ogImageHeight = '1170'
+
 export default ({ titlePre = '' }) => {
   const { pathname } = useRouter()
 
@@ -20,12 +24,9 @@ export default ({ titlePre = '' }) => {
         <title>{titlePre ? `${titlePre} |` : ''} churchprod</title>
         <meta name="description" content="A blog about Church Production" />
         <meta property="og:title" content="churchprod" />
-        <meta
-          property="og:image"
-          content="https://churchprod.now.sh/og-image.png"
-        />
-        <meta property="og:image:width" content="2048" />
-        <meta property="og:image:height" content="1170" />
+        <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:image:width" content={ogImageWidth} />
+        <meta property="og:image:height" content={ogImageHeight} />
         <meta name="twitter:site" content="@thatguysam" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={ogImageUrl} />
