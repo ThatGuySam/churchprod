@@ -282,9 +282,12 @@ const RenderPost = ({ post, redirect, preview }) => {
                 child = (
                   <iframe
                     style={childStyle}
-                    src={display_source}
+                    data-src={display_source}
                     key={!useWrapper ? id : undefined}
-                    className={!useWrapper ? 'asset-wrapper' : undefined}
+                    className={[
+                      !useWrapper ? 'asset-wrapper' : undefined,
+                      'lazyload',
+                    ].join(' ')}
                   />
                 )
               } else {
