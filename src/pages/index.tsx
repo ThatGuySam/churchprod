@@ -4,11 +4,7 @@ import Header from '../components/header'
 import blogStyles from '../styles/blog.module.css'
 import sharedStyles from '../styles/shared.module.css'
 
-import {
-  getBlogLink,
-  getDateStr,
-  postIsPublished,
-} from '../lib/blog-helpers'
+import { getBlogLink, getDateStr, postIsPublished } from '../lib/blog-helpers'
 import { textBlock } from '../lib/notion/renderers'
 import getNotionUsers from '../lib/notion/getNotionUsers'
 import getBlogIndex from '../lib/notion/getBlogIndex'
@@ -43,7 +39,7 @@ export async function getStaticProps({ preview }) {
       preview: preview || false,
       posts,
     },
-    revalidate: 10,
+    unstable_revalidate: 10,
   }
 }
 
